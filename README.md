@@ -1,6 +1,6 @@
 # Project: Plannit Testing Technical Exam
 ## Project Description 
-The cotents of this git repo are used to test the functionality of https://jupiter.cloud.planittesting.com/ 
+The contents of this git repo are used to test the functionality of https://jupiter.cloud.planittesting.com/ 
 
 ### NOTE: Troubleshooting 
 ### Issue: modules not found 
