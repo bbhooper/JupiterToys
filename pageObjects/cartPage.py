@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
+from basePage import basePage
 
-class cartPage:
+class cartPage(basePage):
     def __init__(self, driver):
         self.driver = driver  
 
@@ -10,11 +11,10 @@ class cartPage:
         # it will return the cells which we can then grab the index for 
     def get_table_contents(self):
         # waiting for table to fully load in before trying to locate it 
+        # XPATH used as I had difficulty finding other locators, I am aware this is not ideal and XPATHS are fragile 
         table = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/form/table'))
         )
-        # self.driver.implicitly_wait(2)
-        # table = self.driver.find_element(By.XPATH, '/html/body/div[2]/div/form/table')
         body = table.find_element(By.TAG_NAME, 'tbody')
         cells = body.find_elements(By.TAG_NAME, 'td')
         return cells
@@ -32,6 +32,7 @@ class cartPage:
 
     # get the footer cell that contains the total 
     def get_total(self): 
+        # XPATH used as I had difficulty finding other locators, I am aware this is not ideal and XPATHS are fragile
         return self.driver.find_element(By.XPATH, '/html/body/div[2]/div/form/table/tfoot/tr[1]/td/strong').text
 
         

@@ -1,15 +1,14 @@
 from basePage import basePage
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
-from basePage import basePage
 
-class contactPage:
+class contactPage(basePage):
     def __init__(self, driver):
         self.driver= driver
     
     def click_Submit(self):
+        # CSS SELECTOR used as ID or name could not be located for submit button 
         buttonSubmit = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, '.btn-contact')))
         buttonSubmit.click()
@@ -67,6 +66,9 @@ class contactPage:
         
     ## function to provide submitted form success message 
     def submit_success(self):
+        # CSS SELECTOR used as ID or name could not be located for submit button 
         WebDriverWait(self.driver, 30).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, 'strong.ng-binding')))   
         return self.driver.find_element(By.CSS_SELECTOR, 'strong.ng-binding').text
+
+        
