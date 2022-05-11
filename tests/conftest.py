@@ -50,6 +50,9 @@ def browser(config_browser):
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """
+    original github for report with screenshots: 
+    https://github.com/rafitur2/Python-Pytest-Selenium-HTML-report-with-multiple-screenshots/blob/master/conftest.py
+    
     Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
     :param item:
     """
