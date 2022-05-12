@@ -10,7 +10,7 @@ class contactPage(basePage):
     def click_Submit(self):
         # CSS SELECTOR used as ID or name could not be located for submit button 
         buttonSubmit = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, '.btn-contact')))
+            EC.element_to_be_clickable((By.CSS_SELECTOR, '.form-actions > .btn-contact')))
         buttonSubmit.click()
 
     ### Functions to fill out the contact form ###
@@ -70,5 +70,3 @@ class contactPage(basePage):
         WebDriverWait(self.driver, 30).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, 'strong.ng-binding')))   
         return self.driver.find_element(By.CSS_SELECTOR, 'strong.ng-binding').text
-
-        

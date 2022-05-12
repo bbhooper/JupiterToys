@@ -21,6 +21,7 @@ Python 3.10,
 Selenium 4.1.3, 
 webdriver-manager 3.5.4,
 pytest-html 3.1.1, 
+pytest-repeat 0.9.1
  
 ### Current Browsers Supported 
 - Chrome 
@@ -52,7 +53,7 @@ with this the environment to run the tests should be set up.
 ## Run Testing framework 
 
 ```
-pytest -v tests --html=HTMLreport.html --self-contained-html
+pytest -v tests --html=JupiterToysHTMLreport.html --self-contained-html
 ```
 
 ### HTML test reports 
